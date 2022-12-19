@@ -1,0 +1,23 @@
+Precedence check karni h::
+1. "++" operator takes precedence over the " * " operator, and the "()" operators take precedence over everything 
+           else.
+
+2. the ++number operator is the same as the number++ operator if you're not assigning them to anything. The difference 
+ is number++ returns number and then increments number, and ++number increments first and then returns it.
+
+3. By increasing the value of a pointer, you're incrementing it by the sizeof its contents, that is you're incrementing 
+it as if you were iterating in an array.
+
+REFERENCE :: https://stackoverflow.com/questions/8208021/how-to-increment-a-pointer-address-and-pointers-value.
+
+
+ptr++;    --> Pointer moves to the next int position (as if it was an array)
+++ptr;    --> Pointer moves to the next int position (as if it was an array)
+++*ptr;   --> The value pointed at by ptr is incremented
+++(*ptr); --> The value pointed at by ptr is incremented
+++*(ptr); -->The value pointed at by ptr is incremented
+*ptr++;   --> Pointer moves to the next int position (as if it was an array). But returns the old content
+(*ptr)++; --> The value pointed at by ptr is incremented
+*(ptr)++; --> Pointer moves to the next int position (as if it was an array). But returns the old content
+*++ptr;   --> Pointer moves to the next int position, and then get's accessed, with your code, segfault
+*(++ptr); --> Pointer moves to the next int position, and then get's accessed, with your code, segfault

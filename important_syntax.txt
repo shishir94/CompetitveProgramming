@@ -1,0 +1,16 @@
+string to int : stoi(string)
+size of string = string.size()
+string acts as an array
+substr(substring) (used for string to subtract some charcacter)
+     example : s = Hello
+     a = s.substr(1)  output = a = ello 
+for factorials : google
+int to string : to_string(int)
+recurssion : calling of function inside function 
+We use a command "SORT" to convert array into increasing and decreasing order;like-:
+          sort(array name ,array name + size of array) ---- for increasing
+          sort(array name ,array name + size of array , greater<int>()) ---- for decreasing 
+unsigned long long for very large number 
+for fast i/o we use 
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);               
