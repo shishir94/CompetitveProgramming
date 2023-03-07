@@ -83,7 +83,6 @@ Node* deleteNode(Node* root ,int val){
         Node* temp = inorderSucc(root->right);
         root->data = temp->data;
         root->right = deleteNode(root->right,temp->data);
-
     }
     return root;
 }

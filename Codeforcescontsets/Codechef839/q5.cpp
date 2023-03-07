@@ -18,19 +18,18 @@ while(t--){
     int cnt2 = 0;
     int cnt3 = 0;
     for(int i =0;i<n;i++){
-        if(arr[i]==i+1){
-            cnt1++;
-        }
-        if(arr[i]==n-i){
-            cnt2++;
-        }
         if(arr[i]!=i+1&&arr[i]!=n-i){
             cnt3++;
+        }else if(arr[i]!=i+1){
+            cnt1++;
+        }else if(arr[i]!=n-i){
+            cnt2++;
         }
+
     }
-    if(cnt1>=cnt2+cnt3){
+    if(cnt1+cnt3<=cnt2){
         cout<<"First"<<endl;
-    }else if(cnt2>cnt1+cnt3){
+    }else if(cnt1>cnt2+cnt3){
         cout<<"Second"<<endl;
     }else{
         cout<<"Tie"<<endl;

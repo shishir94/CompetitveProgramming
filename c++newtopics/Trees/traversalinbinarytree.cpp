@@ -53,9 +53,9 @@ void inorder(Node* node){
         return;
     }
 
-//      inorder(node->left);      // -----> For Inorder Traversal.
-//      cout<<node->data<<" ";
-//      inorder(node->right);
+    inorder(node->left);      // -----> For Inorder Traversal.
+    cout<<node->data<<" ";
+    inorder(node->right);
 
 //     cout<<node->data<<" ";    ----> For Pre-order Traversal
 //     pre-order(node->left);

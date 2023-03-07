@@ -32,31 +32,31 @@ m.insert(20);
 m.insert(100);
 m.insert(101);
 m.insert(110);
-for(auto i = m.begin();i!=m.end();i++){
-    cout<<*i<<" ";
-}
-cout<<endl;
-multiset<int,greater<int>>f;
+// for(auto i = m.begin();i!=m.end();i++){
+//     cout<<*i<<" ";
+// }
+// cout<<endl;
+multiset<int>f;
 f.insert(m.begin(),m.end());
 for(auto i = f.begin();i!=f.end();i++){
     cout<<*i<<" ";
 }
 cout<<endl;
-f.clear();
-for(auto i = f.begin();i!=f.end();i++){
-    cout<<*i<<" ";
-}
-cout<<endl;
-cout<<f.empty()<<endl;
+// f.clear();
+// for(auto i = f.begin();i!=f.end();i++){
+//     cout<<*i<<" ";
+// }
+// cout<<endl;
+// cout<<f.empty()<<endl;
 m.erase(10);
 for(auto i = m.begin();i!=m.end();i++){
     cout<<*i<<" ";
 }
-cout<<endl;
-m.erase(m.find(20));    // removes only one occurence of element 20.
-for(auto i = m.begin();i!=m.end();i++){
-    cout<<*i<<" ";
-}
-cout<<endl;
+// cout<<endl;
+// m.erase(m.find(20));    // removes only one occurence of element 20.
+// for(auto i = m.begin();i!=m.end();i++){
+//     cout<<*i<<" ";
+// }
+// cout<<endl;
 return 0;
 }
