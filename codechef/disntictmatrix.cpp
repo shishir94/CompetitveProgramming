@@ -24,6 +24,19 @@ while(t--){
     }
     if(n%2!=0||cnt==0){
         cout<<"-1"<<endl;
+    }else if(cnt1==0){
+        if(n==2){
+            cout<<"-1"<<endl;
+        }else{
+            if(n/2 %2==0){
+                cout<<n/4<<endl;
+            }else{
+                int ans=2;
+                ans = ans+(n/2-1)/2;
+                cout<<ans<<endl;
+            }   
+
+        }
     }else if(cnt1>cnt){
         cout<<(n/2-cnt)<<endl;
     }else{

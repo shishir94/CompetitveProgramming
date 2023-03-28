@@ -2,50 +2,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Trie{
-public:
-    bool is_word=0;
-    Trie* child[26];
-};  
-
-void insert(string word,Trie* root) {
-    int size = word.size();
-    int k=0;
-    Trie* curr = root;
-    for(int i=0;i<size;i++){
-        int k = word[i]-'a';
-        if(curr->child[k]==NULL){
-            curr->child[k]=new Trie();
-        }
-        curr = curr->child[k];
-    }
-    curr->is_word=true;
-}
-    
-bool search(string word,Trie* root) {
-    int size= word.size();
-    int k=0;
-    Trie* curr = root;
-    for(int i=0;i<size;i++){
-        k = word[i]-'a';
-        curr=curr->child[k];
-        if(curr==NULL){
-            return false;
-        }
-    }
-    return curr->is_word;
-}
-
-bool find(string &s,int x,int n,Trie* root){
-    for(int i=x;i<n;i++){
-        string str = s.substr(x,i-x+1);
-        if(search(str,root)){
-            
-        }
-    }
-}
-
-
 int main(){
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
@@ -57,11 +13,27 @@ while(t--){
     int n;
     cin>>n;
     string wordDict[n];
-    Trie* root = new Trie();
     for(int i=0;i<n;i++){
         cin>>wordDict[i];
-        insert(wordDict[i],root);
     }
+    unordered_set<string>mp;
+    for(int i=0;i<n;i++){
+        mp.insert(wordDict[i]);
+    }
+    vector<bool>dp(n+1,false);
+    dp[0]=true;
+    for(int i=1;i<=n;i++){
+        for(int j=i-1;j>=0;j--){
+            if(dp[j]){
+                string c = s.substr(j,i-j);
+                if(mp.find(c)!=mp.end()){
+                    dp[i]=true;
+                    break;
+                }
+            }
+        }
+    }
+    cout<<dp[n]<<endl;
 }
 return 0;
 }
