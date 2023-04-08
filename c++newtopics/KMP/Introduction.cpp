@@ -44,7 +44,7 @@ cin>>txt>>pat;
 int n=txt.size();
 int m = pat.size();
 vector<int>ans;
-vector<int>prefix = lps(txt);
+vector<int>prefix = lps(pat);
 int  i=0;
 int j=0;
 while((n-i)>=(m-j)){
