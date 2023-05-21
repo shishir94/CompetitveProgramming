@@ -1,3 +1,1 @@
-    // for(int i=0;i<c.size();i++){
-    //     cout<<c[i]<<" ";
-    // }
+d.push_back(c);
