@@ -17,6 +17,7 @@ bool valid(vector<long long>&a , vector<long long>&c, long long mid,long long h)
             st = a[i]*((mid/c[i])+1);
         }
         count += st;
+        if(count >= h) return true;
     }
     // cout<<count<<endl;
     return count >= h;
